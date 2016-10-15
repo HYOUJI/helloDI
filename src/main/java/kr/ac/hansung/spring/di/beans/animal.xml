@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
-	<!-- setter를 통해 주입 -->
+	<context:annotation-config></context:annotation-config>
+	
 	<bean id="dog" class="kr.ac.hansung.spring.di.Dog">
 		<property name="myName" value="poodle"></property>
+		<qualifier value="qf_dog"></qualifier>
 	</bean>
 
 	<bean id="cat" class="kr.ac.hansung.spring.di.Cat">
 		<property name="myName" value="bella"></property>
+		<qualifier value="qf_cat"></qualifier>
 	</bean>
 
-	<!-- 생성자를 통해 주입 -->
-	<!-- 객체는 ref를 통해 넣는다. 여기에서 cat, dog 설정해주면 자바 코드는 변경 안 해도된다.-->
 	<bean id="petOwner" class="kr.ac.hansung.spring.di.PetOwner">
-		<constructor-arg ref="cat"></constructor-arg>
 	</bean>
+
+
 </beans>
