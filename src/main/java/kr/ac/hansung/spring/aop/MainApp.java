@@ -1,4 +1,4 @@
-package kr.ac.hansung.spring.di;
+package kr.ac.hansung.spring.aop;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -8,7 +8,7 @@ public class MainApp {
 		// Spring Container 만들기
 		// xml 파일 지정해주기. 이러한 설정파일을 바탕으로 하여 spring container 저장.
 		ClassPathXmlApplicationContext context =
-				new ClassPathXmlApplicationContext("kr/ac/hansung/spring/di/beans/animal.xml");
+				new ClassPathXmlApplicationContext("kr/ac/hansung/spring/aop/beans/animal.xml");
 		
 		// id=petOwner bean 얻어오기.
 		PetOwner person = (PetOwner) context.getBean("petOwner");

@@ -1,4 +1,4 @@
-package kr.ac.hansung.spring.di;
+package kr.ac.hansung.spring.aop;
 
 public interface AnimalType {
 
